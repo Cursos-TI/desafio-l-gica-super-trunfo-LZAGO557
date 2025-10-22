@@ -2,66 +2,117 @@
 #include <stdlib.h>
 #include <time.h>
 
+// Desafio Super Trunfo - Países
+// Tema 2 - Comparação das Cartas
 
 int main() {
-    int escolhaJogador, escolhaComputador;
-    srand(time(0));
+    // Definição das variáveis para armazenar as propriedades das cidades
+    printf("Desafio Super Trunfo\n");
+  // Área para definição das variáveis para armazenar as propriedades das cidades
+      char país1[50], país2[50];
+    int populacao1, pontosturisticos1, populacao2, pontosturisticos2;
+    float area1, pib1, area2, pib2;
 
-    printf("Jogo de Jokenpôn\n");
-    printf("Esoclha uma opção\n");
-    printf("1. Pedra\n");
-    printf("2. Pappel\n");
-    printf("3. Tesoura\n");
+  // Área para entrada de dados
+    // Carta 1
+    printf("\nCarta 1\n");
+    printf("Digite a Cidade: ");
+    scanf("%s", país1);
+
+    printf("Digite a População: ");
+    scanf("%d", &populacao1);
+
+    printf("Digite a Área: ");
+    scanf("%f", &area1);
+
+    printf("Digite o PIB: ");
+    scanf("%f", &pib1);
+
+    printf("Digite o Número de Pontos Turísticos: ");
+    scanf("%d", &pontosturisticos1);
+
+    // Carta 2
+    printf("\nCarta 2\n");
+
+    printf("Digite a Cidade: ");
+    scanf("%s", país2);
+
+    printf("Digite a População: ");
+    scanf("%d", &populacao2);
+
+    printf("Digite a Área: ");
+    scanf("%f", &area2);
+
+    printf("Digite o PIB: ");
+    scanf("%f", &pib2);
+
+    printf("Digite o Número de Pontos Turísticos: ");
+    scanf("%d", &pontosturisticos2);
+
+    // Cálculo da Densidade Populacional e Pib per capita
+    float densidade1 = populacao1 / area1, densidade2 = populacao2 / area2;
+    float pibpercapita1 = pib1 / populacao1, pibpercapita2 = pib2 / populacao2;
+
+    // Área para exibição dos dados da cidade
+    // Carta 1
+    printf("\nCarta 1:\n");
+    printf("Nome da Cidade: %s\n", país1);
+    printf("População: %d\n", populacao1);
+    printf("Área: %.2f km²\n", area1);
+    printf("PIB: %.2f\n", pib1);
+    printf("Número dePontos Turísticos: %d\n", pontosturisticos1);
+    printf("Densidade Populacional: %f\n", densidade1);
+    printf("PIB per capita: %f\n", pibpercapita1);
+
+    // Carta 2
+    printf("\nCarta 2:\n");
+    printf("Nome da Cidade: %s\n", país2);
+    printf("População: %d\n", populacao2);
+    printf("Área: %.2f km²\n", area2);
+    printf("PIB: %.2f\n", pib2);
+    printf("Número de Pontos Turísticos: %d\n", pontosturisticos2);
+    printf("Densidade Populacional: %f\n", densidade2);
+    printf("PIB per capita: %f\n", pibpercapita2);
+    
+    //Comparação lógica
+
+    int escolhaJogador;
+
+    printf("Escolha o atributo de comparação:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Número de Pontos Turísticos\n");
+    printf("5. Densidade Demográfica\n");
     printf("Escolha: ");
     scanf("%d", &escolhaJogador);
-
-    escolhaComputador = rand() % 3 + 1;
 
     switch (escolhaJogador)
     {
     case 1:
-        printf("Jogador: Pedra -");
+        printf("População: %d e %d\n", populacao1, populacao2);
         break;
         case 2:
-        printf("Jogador: Papel -");
+        printf("Área: %.2f km² e %.2f km²\n", area1, area2);
         break;
         case 3:
-        printf("Jogador: Tesoura -");
+        printf("PIB: %.2f e %.2f\n", pib1, pib2);
+        break;
+        case 4:
+        printf("Número de Pontos Turísticos: %d e %d\n", pontosturisticos1, pontosturisticos2);
+        break;
+        case 5:
+        printf("Densidade Demográfica: %f e %f\n", densidade1, densidade2);
         break;
     
     default:
     printf("Opção inválida\n");
         break;
-    }
-    
 
-    switch (escolhaComputador)
-    {
-    case 1:
-        printf("Computador: Pedra\n");
-        break;
-        case 2:
-        printf("Computador: Papel\n");
-        break;
-        case 3:
-        printf("Computador: Tesoura\n");
-        break;
-    
-    }
 
-    if (escolhaComputador == escolhaJogador)
-    {
-        printf("### Jogo empatoy! ###\n");
-    } else if ((escolhaJogador == 1) && (escolhaComputador == 3) ||
-                (escolhaJogador == 2) && (escolhaComputador == 1) ||
-                (escolhaJogador == 3) && (escolhaComputador == 2))
-    {
-        printf("### Parabéns, voc~e ganhou!\n");
-    } else {
-        printf("### Você perdeu! ###\n");
-    }
-    
-    
+
+
+
 
     return 0;
 }
