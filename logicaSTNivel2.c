@@ -56,12 +56,12 @@ int main() {
                 (escolhaJogador == 2) && (escolhaComputador == 1) ||
                 (escolhaJogador == 3) && (escolhaComputador == 2))
     {
-        print("### Parabéns, voc~e ganhou!\n");
+        printf("### Parabéns, voc~e ganhou!\n");
     } else {
         printf("### Você perdeu! ###\n");
     }
     
     
 
-    return 0
+    return 0;
 }
