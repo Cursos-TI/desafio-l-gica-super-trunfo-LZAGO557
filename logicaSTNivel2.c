@@ -16,7 +16,7 @@ int main() {
   // Área para entrada de dados
     // Carta 1
     printf("\nCarta 1\n");
-    printf("Digite a Cidade: ");
+    printf("Digite o País: ");
     scanf("%s", país1);
 
     printf("Digite a População: ");
@@ -34,7 +34,7 @@ int main() {
     // Carta 2
     printf("\nCarta 2\n");
 
-    printf("Digite a Cidade: ");
+    printf("Digite o País: ");
     scanf("%s", país2);
 
     printf("Digite a População: ");
@@ -56,7 +56,7 @@ int main() {
     // Área para exibição dos dados da cidade
     // Carta 1
     printf("\nCarta 1:\n");
-    printf("Nome da Cidade: %s\n", país1);
+    printf("Nome o País: %s\n", país1);
     printf("População: %d\n", populacao1);
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f\n", pib1);
@@ -66,7 +66,7 @@ int main() {
 
     // Carta 2
     printf("\nCarta 2:\n");
-    printf("Nome da Cidade: %s\n", país2);
+    printf("Nome o País: %s\n", país2);
     printf("População: %d\n", populacao2);
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f\n", pib2);
@@ -78,40 +78,58 @@ int main() {
 
     int escolhaJogador;
 
-    printf("Escolha o atributo de comparação:\n");
+    printf("\nEscolha o atributo de comparação\n");
     printf("1. População\n");
     printf("2. Área\n");
     printf("3. PIB\n");
     printf("4. Número de Pontos Turísticos\n");
     printf("5. Densidade Demográfica\n");
-    printf("Escolha: ");
+    printf("\nEscolha: ");
     scanf("%d", &escolhaJogador);
+
+
 
     switch (escolhaJogador)
     {
     case 1:
-        printf("População: %d e %d\n", populacao1, populacao2);
+        printf("População\n");
         break;
         case 2:
-        printf("Área: %.2f km² e %.2f km²\n", area1, area2);
+        printf("Área\n");
         break;
         case 3:
-        printf("PIB: %.2f e %.2f\n", pib1, pib2);
+        printf("PIB\n");
         break;
         case 4:
-        printf("Número de Pontos Turísticos: %d e %d\n", pontosturisticos1, pontosturisticos2);
+        printf("Número de Pontos Turísticos:\n");
         break;
         case 5:
-        printf("Densidade Demográfica: %f e %f\n", densidade1, densidade2);
+        printf("Densidade Demográfica\n");
         break;
     
     default:
     printf("Opção inválida\n");
         break;
 
+    }   if (escolhaJogador == (populacao1 = populacao2) && (area1 = area2) &&
+         (pib1 = pib2) && (pontosturisticos1 = pontosturisticos2) &&
+         (densidade1 = densidade2))
+          {
+            printf("### Jogo empatou! ###\n");
+          } else if ((populacao1 > populacao2) && (area1 > area2) &&
+         (pib1 > pib2) && (escolhaJogador, pontosturisticos1 > pontosturisticos2) &&
+         (densidade1 > densidade2)) 
+         {
+          printf("### Carta 1 venceu! ###\n"); 
+         
+          } else {
+          printf("### Carta 2 venceu! ###\n");
+        } 
 
-
-
+        
+         
+        
+        
 
 
     return 0;
