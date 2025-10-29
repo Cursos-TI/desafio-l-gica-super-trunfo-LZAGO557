@@ -60,7 +60,7 @@ int main() {
     printf("População: %d\n", populacao1);
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f\n", pib1);
-    printf("Número dePontos Turísticos: %d\n", pontosturisticos1);
+    printf("Número de Pontos Turísticos: %d\n", pontosturisticos1);
     printf("Densidade Populacional: %f\n", densidade1);
     printf("PIB per capita: %f\n", pibpercapita1);
 
@@ -111,26 +111,27 @@ int main() {
     printf("Opção inválida\n");
         break;
 
-    }   if (escolhaJogador == (populacao1 = populacao2) && (area1 = area2) &&
+    }   
+
+    if (escolhaJogador == (populacao1 = populacao2) && (area1 = area2) &&
          (pib1 = pib2) && (pontosturisticos1 = pontosturisticos2) &&
-         (densidade1 = densidade2))
+         (densidade1 = densidade2)) { 
+
+         printf("### Empate! ###\n"); 
+        
+         if (escolhaJogador ==  (populacao1 > populacao2) && (area1 > area2) &&
+         (pib1 > pib2) && (pontosturisticos1 > pontosturisticos2))
           {
-            printf("### Jogo empatou! ###\n");
-          } else if ((populacao1 > populacao2) && (area1 > area2) &&
-         (pib1 > pib2) && (escolhaJogador, pontosturisticos1 > pontosturisticos2) &&
-         (densidade1 > densidade2)) 
-         {
-          printf("### Carta 1 venceu! ###\n"); 
-         
+            if (escolhaJogador == (densidade1 < densidade2))
+            printf("Carta 1 Venceu!\n");
           } else {
-          printf("### Carta 2 venceu! ###\n");
-        } 
+            printf("Carta 2 Venceu!\n");
+          }
 
-        
+        } else 
+
          
-        
-        
-
-
+          
+    
     return 0;
 }
