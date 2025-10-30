@@ -124,6 +124,7 @@ int main() {
     printf("Países: %s e %s\n", pais1, pais2);
     printf("Atributo: %d\n", escolhaJogador);
      printf("Valores Atributo: ");
+     
     switch (escolhaJogador) {
         case 1: /* População (inteiro) */
             printf("%d (Carta 1)  e  %d (Carta 2)\n", populacao1, populacao2);
