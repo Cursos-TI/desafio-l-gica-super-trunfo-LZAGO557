@@ -53,7 +53,27 @@ int main() {
     float densidade1 = populacao1 / area1, densidade2 = populacao2 / area2;
     float pibpercapita1 = pib1 / populacao1, pibpercapita2 = pib2 / populacao2;
 
-    
+    // Área para exibição dos dados da cidade
+    // Carta 1
+    printf("\nCarta 1:\n");
+    printf("Nome do País: %s\n", pais1);
+    printf("População: %d\n", populacao1);
+    printf("Área: %.2f km²\n", area1);
+    printf("PIB: %.2f\n", pib1);
+    printf("Número de Pontos Turísticos: %d\n", pontosturisticos1);
+    printf("Densidade Populacional: %f\n", densidade1);
+    printf("PIB per capita: %f\n", pibpercapita1);
+
+    // Carta 2
+    printf("\nCarta 2:\n");
+    printf("Nome do País: %s\n", pais2);
+    printf("População: %d\n", populacao2);
+    printf("Área: %.2f km²\n", area2);
+    printf("PIB: %.2f\n", pib2);
+    printf("Número de Pontos Turísticos: %d\n", pontosturisticos2);
+    printf("Densidade Populacional: %f\n", densidade2);
+    printf("PIB per capita: %f\n", pibpercapita2);
+
     //Comparação lógica
 
     int escolhaJogador;
