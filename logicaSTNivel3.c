@@ -78,6 +78,7 @@ int main() {
 
     int escolhaJogador1;
     int escolhaJogador2;
+    int resultado;
 
     printf("\nEscolha o 1º atributo de comparação\n");
     printf("1. População\n");
@@ -87,17 +88,6 @@ int main() {
     printf("5. Densidade Demográfica\n");
     printf("\nEscolha: ");
     scanf("%d", &escolhaJogador1);
-
-    printf("\nEscolha o 2º atributo de comparação\n");
-    printf("1. População\n");
-    printf("2. Área\n");
-    printf("3. PIB\n");
-    printf("4. Número de Pontos Turísticos\n");
-    printf("5. Densidade Demográfica\n");
-    printf("\nEscolha: ");
-    scanf("%d", &escolhaJogador2);
-    
-
 
     switch (escolhaJogador1)
     {
@@ -119,13 +109,17 @@ int main() {
     
     default:
     printf("Opção inválida\n");
-        break;
+        break; }
 
-    
-    switch (escolhaJogador2 == escolhaJogador1)
+    printf("\nEscolha o 2º atributo de comparação: ");
+    scanf("%d", &escolhaJogador2);
+        if (resultado = escolhaJogador2 == escolhaJogador1) {
+        printf("Atributos iguais! Escolha outro atributo.\n");
+        } else {
+            switch (escolhaJogador2)
     {
     case 1:
-        printf("População\n");
+        printf("População\n"); 
         break;
         case 2:
         printf("Área\n");
@@ -138,23 +132,26 @@ int main() {
         break;
         case 5:
         printf("Densidade Demográfica\n");
-    
-        if (escolhaJogador2 == escolhaJogador1) {
-            printf("Já foi escolhido esse atributo. Escolha outro.\n\n");
-        } else {
-            break;
-        }
 
     default:
     printf("Opção inválida\n");
         break;
     }   
+        }
 
-  if ((escolhaJogador1, escolhaJogador2 == 1 && populacao1 > populacao2) ||
-      (escolhaJogador1, escolhaJogador2 == 2 && area1 > area2) ||
-      (escolhaJogador1, escolhaJogador2  == 3 && pib1 > pib2) ||
-      (escolhaJogador1, escolhaJogador2 == 4 && pontosturisticos1 > pontosturisticos2) ||
-      (escolhaJogador1, escolhaJogador2 == 5 && densidade1 < densidade2)) {
+    
+    // Lógica de comparação dos atributos escolhidos //
+
+  if ((escolhaJogador1 == 1 && populacao1 > populacao2) ||
+      (escolhaJogador1 == 2 && area1 > area2) ||
+      (escolhaJogador1 == 3 && pib1 > pib2) ||
+      (escolhaJogador1 == 4 && pontosturisticos1 > pontosturisticos2) ||
+      (escolhaJogador1 == 5 && densidade1 < densidade2) && 
+      (escolhaJogador2 == 1 && populacao1 > populacao2) ||
+      (escolhaJogador2 == 2 && area1 > area2) ||
+      (escolhaJogador2 == 3 && pib1 > pib2) ||
+      (escolhaJogador2 == 4 && pontosturisticos1 > pontosturisticos2) ||
+      (escolhaJogador2 == 5 && densidade1 < densidade2)) {
     printf("\nCarta 1 vence!\n");
 
     printf("\nResultado\n");
@@ -162,7 +159,7 @@ int main() {
     printf("Atributos: %d e %d\n", escolhaJogador1, escolhaJogador2);
     printf("Valores Atributos: ");
      
-    switch (escolhaJogador1, escolhaJogador2) {
+    switch (escolhaJogador1 == escolhaJogador2) {
         case 1: /* População (inteiro) */
             printf("%d (Carta 1)  e  %d (Carta 2)\n", populacao1, populacao2);
             break;
@@ -184,17 +181,22 @@ int main() {
     }
     printf("Vencedor: Carta 1\n");
 
-  } else if ((escolhaJogador1, escolhaJogador2 == 1 && populacao1 < populacao2) ||
-        (escolhaJogador1, escolhaJogador2 == 2 && area1 < area2) ||
-        (escolhaJogador1, escolhaJogador2 == 3 && pib1 < pib2) ||
-        (escolhaJogador1, escolhaJogador2 == 4 && pontosturisticos1 < pontosturisticos2) ||  
-        (escolhaJogador1, escolhaJogador2 == 5 && densidade1 > densidade2)) {
+  } else if ((escolhaJogador1 == 1 && populacao1 < populacao2) ||
+        (escolhaJogador1 == 2 && area1 < area2) ||
+        (escolhaJogador1 == 3 && pib1 < pib2) ||
+        (escolhaJogador1 == 4 && pontosturisticos1 < pontosturisticos2) ||  
+        (escolhaJogador1 == 5 && densidade1 > densidade2) && 
+        (escolhaJogador2 == 1 && populacao1 < populacao2) ||
+        (escolhaJogador2 == 2 && area1 < area2) ||
+        (escolhaJogador2 == 3 && pib1 < pib2) ||
+        (escolhaJogador2 == 4 && pontosturisticos1 < pontosturisticos2) ||  
+        (escolhaJogador2 == 5 && densidade1 > densidade2)) {
     printf("\nCarta 2 vence!\n");
     
     printf("\nResultado\n");
     printf("Países: %s e %s\n", pais1, pais2);
     printf("Atributo: %d e %d\n", escolhaJogador1, escolhaJogador2);
-     printf("Valores Atributo: ");
+     printf("Valores Atributos: ");
     switch (escolhaJogador1, escolhaJogador2) {
         case 1: /* População (inteiro) */
             printf("%d (Carta 1)  e  %d (Carta 2)\n", populacao1, populacao2);
@@ -223,4 +225,4 @@ int main() {
     
     return 0;
 
-}
+    }
