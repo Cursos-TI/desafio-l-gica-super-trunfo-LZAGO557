@@ -79,6 +79,7 @@ int main() {
     int escolhaJogador1;
     int escolhaJogador2;
     int resultado;
+    int soma1, soma2;
 
     printf("\nEscolha o 1º atributo de comparação\n");
     printf("1. População\n");
@@ -151,15 +152,27 @@ int main() {
       (escolhaJogador2 == 2 && area1 > area2) ||
       (escolhaJogador2 == 3 && pib1 > pib2) ||
       (escolhaJogador2 == 4 && pontosturisticos1 > pontosturisticos2) ||
-      (escolhaJogador2 == 5 && densidade1 < densidade2)) {
+      (escolhaJogador2 == 5 && densidade1 < densidade2) ||
+      
+      // SOMA DOS ATRIBUTOS PARA DEFINIÇÃO DO VENCEDOR
+
+      (populacao1 + area1 + pib1 + pontosturisticos1 + densidade1) >
+      (populacao2 + area2 + pib2 + pontosturisticos2 + densidade2))
+      
+      {
+
+        
     printf("\nCarta 1 vence!\n");
 
     printf("\nResultado\n");
     printf("Países: %s e %s\n", pais1, pais2);
     printf("Atributos: %d e %d\n", escolhaJogador1, escolhaJogador2);
+    printf("Soma Atributos Carta 1: %f\n", populacao1 + area1 + pib1 + pontosturisticos1 + densidade1);
+    printf("Soma Atributos Carta 2: %f\n", populacao2 + area2 + pib2 + pontosturisticos2 + densidade2);
     printf("Valores Atributos: ");
+    
      
-    switch (escolhaJogador1 == escolhaJogador2) {
+    switch (escolhaJogador1)  {
         case 1: /* População (inteiro) */
             printf("%d (Carta 1)  e  %d (Carta 2)\n", populacao1, populacao2);
             break;
@@ -179,6 +192,29 @@ int main() {
             printf("Opção inválida\n");
             break;
     }
+
+    printf("Valores Atributos 2: ");
+    switch (escolhaJogador2) {
+        case 1: /* População (inteiro) */
+            printf("%d (Carta 1)  e  %d (Carta 2)\n", populacao1, populacao2);
+            break;
+        case 2: /* Área (float) */
+            printf("%.2f km² (Carta 1)  e  %.2f km² (Carta 2)\n", area1, area2);
+            break;
+        case 3: /* PIB (float) */
+            printf("%.2f (Carta 1)  e  %.2f (Carta 2)\n", pib1, pib2);
+            break;
+        case 4: /* Pontos turísticos (inteiro) */
+            printf("%d (Carta 1)  e  %d (Carta 2)\n", pontosturisticos1, pontosturisticos2);
+            break;
+        case 5: /* Densidade (float) */
+            printf("%.3f (Carta 1)  e  %.3f (Carta 2)\n", densidade1, densidade2);
+            break;
+        default:
+            printf("Opção inválida\n");
+            break;
+    }
+
     printf("Vencedor: Carta 1\n");
 
   } else if ((escolhaJogador1 == 1 && populacao1 < populacao2) ||
@@ -190,14 +226,47 @@ int main() {
         (escolhaJogador2 == 2 && area1 < area2) ||
         (escolhaJogador2 == 3 && pib1 < pib2) ||
         (escolhaJogador2 == 4 && pontosturisticos1 < pontosturisticos2) ||  
-        (escolhaJogador2 == 5 && densidade1 > densidade2)) {
+        (escolhaJogador2 == 5 && densidade1 > densidade2) ||
+
+        // SOMA DOS ATRIBUTOS PARA DEFINIÇÃO DO VENCEDOR
+
+       (populacao1 + area1 + pib1 + pontosturisticos1 + densidade1) <
+       (populacao2 + area2 + pib2 + pontosturisticos2 + densidade2)) 
+      
+      {
+
     printf("\nCarta 2 vence!\n");
     
     printf("\nResultado\n");
     printf("Países: %s e %s\n", pais1, pais2);
-    printf("Atributo: %d e %d\n", escolhaJogador1, escolhaJogador2);
-     printf("Valores Atributos: ");
-    switch (escolhaJogador1, escolhaJogador2) {
+    printf("Atributos: %d e %d\n", escolhaJogador1, escolhaJogador2);
+    printf("Soma Atributos Carta 1: %.f\n", populacao1 + area1 + pib1 + pontosturisticos1 + densidade1);
+    printf("Soma Atributos Carta 2: %.f\n", populacao2 + area2 + pib2 + pontosturisticos2 + densidade2);
+    printf("Valores Atributos 1: ");
+    
+
+    switch (escolhaJogador2) {
+        case 1: /* População (inteiro) */
+            printf("%d (Carta 1)  e  %d (Carta 2)\n", populacao1, populacao2);
+            break;
+        case 2: /* Área (float) */
+            printf("%.2f km² (Carta 1)  e  %.2f km² (Carta 2)\n", area1, area2);
+            break;
+        case 3: /* PIB (float) */
+            printf("%.2f (Carta 1)  e  %.2f (Carta 2)\n", pib1, pib2);
+            break;
+        case 4: /* Pontos turísticos (inteiro) */
+            printf("%d (Carta 1)  e  %d (Carta 2)\n", pontosturisticos1, pontosturisticos2);
+            break;
+        case 5: /* Densidade (float) */
+            printf("%.3f (Carta 1)  e  %.3f (Carta 2)\n", densidade1, densidade2);
+            break;
+        default:
+            printf("Opção inválida\n");
+            break; }
+
+        printf("Valores Atributos 2: ");
+    switch (escolhaJogador2) {
         case 1: /* População (inteiro) */
             printf("%d (Carta 1)  e  %d (Carta 2)\n", populacao1, populacao2);
             break;
@@ -220,7 +289,7 @@ int main() {
     printf("Vencedor: Carta 2\n");
 
   } else {
-    printf("\nEmpate!\n");
+     printf("\nEmpate!\n");
   }        
     
     return 0;
